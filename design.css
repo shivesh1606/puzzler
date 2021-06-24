@@ -100,7 +100,7 @@ body
   
   #playButton , #pauseButton ,#resetButton{
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 3rem;
     width: 85px;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
