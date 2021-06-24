@@ -3,6 +3,7 @@
 {
     text-align: center;
     flex: 1;
+    font-size:2 rem;
 }
 body
 {
@@ -28,6 +29,7 @@ body
 .game H1
 {
     flex: 0.5;
+    font-size: 3.5rem;
 }
 .game .container
 {
