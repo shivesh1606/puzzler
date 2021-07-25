@@ -6,16 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="design.css"/>
+    <!----Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!----Font----->
     <title>Document</title>
 </head>
 <body>
-    <section class="game">
-    <H1>Puzzler</H1>
-    <button id="rand">Random</button>
     
-    <div class="container">
+    <H1>Puzzler</H1>
+    
+
+    <section class="game">
+        <div class="controls">
+            <button id="rand">Random</button>
+        </div>
+        <div class="container">
         <div class="row">
-            <div class="col 11" id="div1">
+            <div class="col left_corner" id="div1">
 1
             </div>
             <div class="col 12" id="div2">
@@ -24,12 +36,12 @@
             <div class="col 13" id="div3">
                 3
             </div>
-            <div class="col 14" id="div4">
+            <div class="col right_corner" id="div4">
                 4
             </div>
         </div>
         <div class="row">
-            <div class="col 21" id="div5">
+            <div class="col " id="div5">
 5
             </div>
             <div class="col 22" id="div6">
@@ -38,12 +50,12 @@
             <div class="col 23" id="div7">
                 7
             </div>
-            <div class="col 24" id="div8">
+            <div class="col " id="div8">
                 8
             </div>
         </div>
         <div class="row">
-            <div class="col 31" id="div13">
+            <div class="col " id="div13">
 9
             </div>
             <div class="col 32" id="div14">
@@ -52,12 +64,12 @@
             <div class="col 33" id="div15">
                 11
             </div>
-            <div class="col 34" id="div16">
+            <div class="col " id="div16">
                 12
             </div>
         </div>
         <div class="row">
-            <div class="col 41">
+            <div class="col left_bottom_corner">
 13
             </div>
             <div class="col 42">
@@ -66,7 +78,7 @@
             <div class="col 43">
                 15
             </div>
-            <div class="col 44" >
+            <div class="col right_bottom_corner current_empty" >
             </div>
         </div>
     </div>

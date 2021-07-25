@@ -1,66 +1,89 @@
-
 *
 {
     text-align: center;
-    flex: 1;
     font-size:2 rem;
 }
 body
 {
-    padding: 0 0;
+    padding: 30 25;
     background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
             linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
             linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-}
-.dropdown
-{
-    text-align: left;
-    margin: 10px 0px;
-}
+    font-family: 'Pacifico', cursive;
+    }
+
 .game
 {
     min-height: 100vh;
+    justify-content: space-around;
     display: flex;
-    flex: 2;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    padding:50px 50px;
+    
 
 }
 .game H1
 {
-    flex: 0.5;
     font-size: 3.5rem;
 }
-.game .container
-{
-    flex: 2;
-}
+
 
 .container
 {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    min-height: 50vh;
+    width: 500px;
+    min-height: 500px;
     background-color: aqua;
     justify-content: space-between;
     margin: auto auto;
+    border-radius: 41px;
+
+    background: linear-gradient(225deg, #8f8aa6, #aaa4c5);
+    box-shadow:  -25px 25px 45px #87829c,
+             25px -25px 45px #b7b0d4;
+
 }
 .row
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .col
 {
-    border: 2px solid white;
+    
+    border: thick double #df437f;
+    padding-top: 15%;
+    padding-bottom: 15%;
     flex: 1;
     display: flex;
     justify-content: space-evenly;
     margin :0 auto;
+    height: 12.5vh;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .current_empty
 {
-    background-color: darkgreen;;
+    background-color: darkgreen;
+
+    background: linear-gradient(315deg, #aaa4c5, #8f8aa6);
+box-shadow:  -30px -30px 60px #6b677b,
+             30px 30px 60px #d3cbf5;
+}
+.right_corner
+{
+    border-top-right-radius: 41px;
+}
+.left_corner
+{
+    border-top-left-radius: 41px;
+}
+.right_bottom_corner
+{
+    border-bottom-right-radius: 41px;
+}
+.left_bottom_corner
+{
+    border-bottom-left-radius: 41px;
 }

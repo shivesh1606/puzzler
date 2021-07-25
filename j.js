@@ -11,57 +11,92 @@ function error()
         'sound2.wav');   
             beepsound.play();   
 }
+function error2()
+{
+    let beepsound = new Audio(   
+        'error.wav');   
+            beepsound.play();   
+}
+function switch_innerText(div1,div2)
+{
+    let tdiv=document.createElement('div');
+    tdiv.classList.add('col');
+    tdiv.innerText=div1.innerText;
+    div1.innerText=div2.innerText;
+    div2.innerText=tdiv.innerText;
+
+}
+function switch_empty(div1,div2) {
+    let tdiv=document.createElement('div');
+    tdiv.classList.add('col');
+    tdiv.innerText=div1.innerText;
+    div1.innerText=div2.innerText;
+    div2.innerText=tdiv.innerText;
+    div1.classList.remove('current_empty');
+    div2.classList.add('current_empty');
+}
+
 const divs=document.querySelectorAll('.col');
 const rows=document.querySelectorAll('.row');
 const btn=document.getElementById("rand");
 window.addEventListener("keydown",(el)=>
-{
+{   
     
+    try{
     switch (el.code)
     {
         case "ArrowUp":
-            try{
-                switch_innerText(divs[cur_empty],divs[cur_empty-4]);
+            if(cur_empty-4>=0){
+                switch_empty(divs[cur_empty],divs[cur_empty-4]);
                 cur_empty=cur_empty-4;
                 play();
                 }
-            catch
+            else
             {error();}
 
         break;
         case "ArrowDown":
-            try{
+            if(cur_empty+4<=15)
+            {
             console.log("ArrowDown");
-            switch_innerText(divs[cur_empty],divs[cur_empty+4]);
+            switch_empty(divs[cur_empty],divs[cur_empty+4]);
             cur_empty=cur_empty+4;
+            
             play();
             }
-            catch
+            else
             {error();}
         break;
         case "ArrowLeft":
-            try{
+            if(cur_empty%4!==0){
             console.log("ArrowDown");
-            switch_innerText(divs[cur_empty],divs[cur_empty-1]);
+            switch_empty(divs[cur_empty],divs[cur_empty-1]);
             cur_empty=cur_empty-1;
             play();}
-            catch
+            else
             {error();}
         break;
         case "ArrowRight":
-            try{
+            if(cur_empty%4!==3){
             console.log("ArrowDown");
-            switch_innerText(divs[cur_empty],divs[cur_empty+1]);
+            switch_empty(divs[cur_empty],divs[cur_empty+1]);
             cur_empty=cur_empty+1;
             play();
             }
-            catch
+            else
             {error();}
         break;
         default:
             console.log("Unknwon key",el.code);
         break;
     }
+
+    }
+    catch{
+        error2();
+    }
+    
+    console.log(` cur_empty=${cur_empty}`);
 })
 
 
@@ -80,11 +115,3 @@ function generaateRand(n)
     return(Math.floor(Math.random()*n))
 }
 
-function switch_innerText(div1,div2)
-{
-    let tdiv=document.createElement('div');
-    tdiv.classList.add('col');
-    tdiv.innerText=div1.innerText;
-    div1.innerText=div2.innerText;
-    div2.innerText=tdiv.innerText;
-}
