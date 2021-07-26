@@ -22,10 +22,46 @@ body
     
 
 }
-.game H1
+H1
 {
-    font-size: 3.5rem;
+    font-size: 10rem;
 }
+
+.wrapper {
+    margin: 30px auto;
+    color:#fff;
+    text-align:center;
+    }
+
+.wrapper p 
+{
+    font-size: 5em;
+
+}
+.wrapper p span
+{
+    background: transparent;
+}
+    button{
+
+        background:#ffa600;
+        color:#fff;
+        border: solid 1px #fff;
+        text-decoration:none;
+        cursor:pointer;
+        font-size:1.8em;
+        padding:18px 10px;
+        width:180px;
+        margin: 10px;
+         outline: none;
+    }
+button:hover{
+
+            background:#fff;
+            border: solid 1px #fff;
+            color:#ffa600;
+}
+
 
 
 .container

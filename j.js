@@ -1,3 +1,4 @@
+
 const arr=[[11,12,13,14],[21,22,23,24],[31,32,33,34],[41,42,43,44]]
 let cur_empty=15;
 var once=true;
@@ -5,14 +6,38 @@ var start=true;
 const divs=document.querySelectorAll('.col');
 const rows=document.querySelectorAll('.row');
 const btn=document.getElementById("rand");
+const pause=document.getElementById("button-stop");
 
+const beepsound1=new Audio('sound1.wav');
+const beepsound2=new Audio('sound2.wav');
+const beepsound3=new Audio('Win.wav');
+const beepsound4=new Audio('error.wav');
 function play(str) {   
-    let beepsound = new Audio(   
-`${str}.wav`);   
+    let beepsound;
+    switch(str)
+    {
+        case "sound1":
+            beepsound=beepsound1;
+            break;
+        case "sound2":
+            beepsound=beepsound2;
+            break;
+        case "error":
+            beepsound=beepsound4;
+            break;
+        case "Win":
+            beepsound=beepsound3;
+            break;
+    } 
     beepsound.play();   
 }   
 
 
+
+function startTimer()
+{
+
+}
 function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
@@ -71,6 +96,7 @@ window.addEventListener("keydown",(el)=>
                 switch_empty(divs[cur_empty],divs[cur_empty-4]);
                 cur_empty=cur_empty-4;
                 play("sound1");
+                checkWin();
                 }
             else
             {
@@ -88,6 +114,7 @@ window.addEventListener("keydown",(el)=>
             cur_empty=cur_empty+4;
             
             play("sound1");
+            checkWin();
             }
             else
             {play("sound2");}
@@ -98,7 +125,8 @@ window.addEventListener("keydown",(el)=>
             console.log("ArrowDown");
             switch_empty(divs[cur_empty],divs[cur_empty-1]);
             cur_empty=cur_empty-1;
-            play("sound1");}
+            play("sound1");
+            checkWin();}
             else
             {play("sound2");}
         break;
@@ -109,12 +137,13 @@ window.addEventListener("keydown",(el)=>
             switch_empty(divs[cur_empty],divs[cur_empty+1]);
             cur_empty=cur_empty+1;
             play("sound1");
+            checkWin();
             }
             else
             {play("sound2");}
         break;
         default:
-            console.log("Unknwon key",el.code);
+            
         break;
     }
 
@@ -123,7 +152,11 @@ window.addEventListener("keydown",(el)=>
         play("error");
     }
     
-    console.log(` cur_empty=${cur_empty}`);
+   
+   
+})
+function checkWin()
+{
     let flag=1;
     for(let d=0;d<16;d++)
     {   
@@ -136,12 +169,13 @@ window.addEventListener("keydown",(el)=>
             console.log("Ypu win~~");
         }
     
-})
-
+}
 
 btn.addEventListener("click",()=>
 {
     start=true;
+    btn.innerText="Reset";
+    startTimer();
     if(once)
     {  
         for(let i=0;i<15;i++)
@@ -177,3 +211,4 @@ function generaateRand(n)
 {
     return(Math.floor(Math.random()*n))
 }
+
