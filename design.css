@@ -87,3 +87,9 @@ box-shadow:  -30px -30px 60px #6b677b,
 {
     border-bottom-left-radius: 41px;
 }
+.error
+{
+    background: #333 ;
+    color: whitesmoke; 
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
